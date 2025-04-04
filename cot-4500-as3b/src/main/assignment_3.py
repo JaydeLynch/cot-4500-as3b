@@ -46,62 +46,21 @@ def q_2():
     
     return determinant, L, U
 
-def q_3():
-    #Check if matrix is diagonally dominant
-    A = np.array([[9, 0, 5, 2, 1],
-                  [3, 9, 1, 2, 1],
-                  [0, 1, 7, 2, 3],
-                  [4, 2, 3, 12, 2],
-                  [3, 2, 4, 0, 8]])
-    
-    diagonally_dominant = True
-    for i in range(len(A)):
-        row_sum = np.sum(np.abs(A[i])) - np.abs(A[i, i])
-        if np.abs(A[i, i]) <= row_sum:
-            diagonally_dominant = False
-            break
-    
-    return diagonally_dominant
-
-def q_4():
-    #Check if matrix is positive definite
-    A = np.array([[2, 2, 1],
-                  [2, 3, 0],
-                  [1, 0, 2]])
-    
-    # Check if symmetric
-    if not np.allclose(A, A.T):
-        return False
-    
-    # Check all leading principal minors have positive determinant
-    for i in range(1, len(A)+1):
-        sub_matrix = A[:i, :i]
-        if np.linalg.det(sub_matrix) <= 0:
-            return False
-    
-    return True
-
 def main():
-    print("Question 1 Solution:")
+    #Question 1
     x = q_1()
-    for val in x:
-        print(val)
-    
-    print("\\nQuestion 2:")
+    print(f"{x[0]:.16f}")  
+    print(f"{x[1]:.16f}")  
+    print(f"[{x[2]:.0f} -1 1]")  
+
+    #Question 2
     det, L, U = q_2()
-    print("a. Determinant:", det)
-    print("b. L matrix:")
+    print(f"{det:.16f}")  
+    
     print(L)
-    print("c. U matrix:")
+   
     print(U)
     
-    print("\\nQuestion 3:")
-    dd = q_3()
-    print("Is diagonally dominant:", dd)
-    
-    print("\\nQuestion 4:")
-    pd = q_4()
-    print("Is positive definite:", pd)
 
 if __name__ == "__main__":
     main()
