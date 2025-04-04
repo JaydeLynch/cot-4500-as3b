@@ -4,7 +4,7 @@ def q_1():
     #Solve linear system using Gaussian elimination
     # Augmented matrix
     A = np.array([[2, -1, 1, 6],
-                  [1, 3, 1, 0],\
+                  [1, 3, 1, 0],
                   [-1, 5, 4, -3]], dtype=float)
     
     # Gaussian elimination
