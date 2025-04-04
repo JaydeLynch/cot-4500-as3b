@@ -16,4 +16,4 @@ def test_q_3():
     assert q_3() == True
 
 def test_q_4():
-    assert q_4() == True}
+    assert q_4() == True
