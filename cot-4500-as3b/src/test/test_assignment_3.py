@@ -1,4 +1,4 @@
- import numpy as np
+import numpy as np
 from main.assignment_3 import q_1, q_2, q_3, q_4
 
 def test_q_1():
