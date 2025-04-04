@@ -83,12 +83,12 @@ def q_4():
 
 def main():
     print("Question 1 Solution:")
-    x = question_1()
+    x = q_1()
     for val in x:
         print(val)
     
     print("\\nQuestion 2:")
-    det, L, U = question_2()
+    det, L, U = q_2()
     print("a. Determinant:", det)
     print("b. L matrix:")
     print(L)
@@ -96,11 +96,11 @@ def main():
     print(U)
     
     print("\\nQuestion 3:")
-    dd = question_3()
+    dd = q_3()
     print("Is diagonally dominant:", dd)
     
     print("\\nQuestion 4:")
-    pd = question_4()
+    pd = q_4()
     print("Is positive definite:", pd)
 
 if __name__ == "__main__":
