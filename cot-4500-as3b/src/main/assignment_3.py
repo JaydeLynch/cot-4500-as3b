@@ -1,6 +1,6 @@
 import numpy as np
 
-def q_1():
+def question_1():
     #Solve linear system using Gaussian elimination
     # Augmented matrix
     A = np.array([[2, -1, 1, 6],
@@ -26,7 +26,7 @@ def q_1():
     
     return x
 
-def q_2():
+def question_2():
     #LU Factorization
     A = np.array([[1, 1, 0, 3],
                   [2, 1, -1, 1],
@@ -47,20 +47,52 @@ def q_2():
     return determinant, L, U
 
 def main():
-    #Question 1
-    x = q_1()
+    # Question 1
+    x = question_1()
     print(f"{x[0]:.16f}")  
-    print(f"{x[1]:.16f}")  
-    print(f"[{x[2]:.0f} -1 1]")  
-
-    #Question 2
-    det, L, U = q_2()
+    print("\n")
+    print(f"{x[1]:.15f}")  
+    print("\n")
+    print(f"[{int(round(x[2]))} -1 1]") 
+    print("\n")
+    
+    # Question 2
+    det, L, U = question_2()
     print(f"{det:.16f}")  
+    print("\n")
     
-    print(L)
-   
-    print(U)
+    # Print L matrix
+    print("[", end="")
+    for i in range(len(L)):
+        if i > 0:
+            print(" [", end="")
+        else:
+            print("[", end="")
+        for j in range(len(L[i])):
+            print(f"{L[i,j]:.1f}", end="")
+            if j < len(L[i])-1:
+                print(" ", end="")
+        print("]", end="")
+        if i < len(L)-1:
+            print("")
+    print("")
     
+    # Print U matrix
+    print("\n")
+    print("[", end="")
+    for i in range(len(U)):
+        if i > 0:
+            print(" [", end="")
+        else:
+            print("[", end="")
+        for j in range(len(U[i])):
+            print(f"{U[i,j]:.1f}", end="")
+            if j < len(U[i])-1:
+                print(" ", end="")
+        print("]", end="")
+        if i < len(U)-1:
+            print("")
+    print("")
 
 if __name__ == "__main__":
     main()
