@@ -1,4 +1,4 @@
- import numpy as np
+import numpy as np
 
 def q_1():
     #Solve linear system using Gaussian elimination
