@@ -36,17 +36,13 @@ A1 = np.array([[2, -1, 1], [1, 3, 1], [-1, 5, 4]], dtype=float)
 b1 = np.array([6, 0, -3], dtype=float)
 solution_q1 = gaussian_elimination(A1, b1)
 
-print(solution_q1[0])
-print("\n")
-print(solution_q1[1])
-print("\n")
 print(solution_q1)
 print("\n")
 
 # Question 2
 A2 = np.array([[1, 1, 0, 3], [2, 1, -1, 1], [3, -1, -1, 2], [-1, 2, 3, -1]], dtype=float)
 L2, U2 = lu_factorization(A2)
-det_A2 = np.prod(np.diag(U2))
+det_A2 = np.prod(np.diag(U2).astype(np.float64))
 
 # Print exactly as shown in expected output
 print(det_A2)
